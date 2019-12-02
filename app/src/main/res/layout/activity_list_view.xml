@@ -7,9 +7,10 @@
     tools:context=".ViewList">
 
     <ListView
-        android:id="@+id/liborio"
+        android:id="@+id/listView"
         android:layout_width="409dp"
         android:layout_height="729dp"
+        android:background="@color/backgroundCDZ"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

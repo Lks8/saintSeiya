@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,57 +17,47 @@ import androidx.annotation.Nullable;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class CavaleirosListView extends ArrayAdapter<Character> {
+public class CavaleirosListView extends BaseAdapter {
 
-    private String[] names;
-    private Integer[] ids;
-    private String[] imageUrl;
-    private Activity context;
+private final ArrayList<Character> characters;
+private final Activity context;
+//private String URL = "https://raw.githubusercontent.com/diegochagas/saint-seiya-api/master/frontend/src/";
 
-    public CavaleirosListView(Activity context, String[] names, Integer[] ids, String[] imageUrl) {
-        super(context, R.layout.listview_layout);
-        this.context = context;
-        this.names = names;
-        this.ids = ids;
-        this.imageUrl = imageUrl;
-    }
+public CavaleirosListView(ArrayList<Character> characters, Activity context){
+    this.context = context;
+    this.characters = characters;
+}
+    @Override public int getCount() { return characters.size(); }
 
-    @NonNull
+    @Override public Object getItem(int position) { return characters. get(position); }
+
+    @Override public long getItemId(int position) { return 0; }
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View r = convertView;
-        ViewHolder viewHolder = null;
-        if(r==null){
-            LayoutInflater layoutInflater=context.getLayoutInflater();
-            r=layoutInflater.inflate(R.layout.listview_layout,null, true);
-            viewHolder=new ViewHolder(r);
-            r.setTag(viewHolder);
-        }
-        else {
-            viewHolder= (ViewHolder) r.getTag();
+    public View getView(int position, View convertView, ViewGroup parent) {
+        String URL = "https://raw.githubusercontent.com/diegochagas/saint-seiya-api/master/frontend/src/";
+        View view = context.getLayoutInflater().inflate(R.layout.listview_layout,parent,false);
+        Character character = characters.get(position);
 
-        }
-        //String URL = "https://raw.githubusercontent.com/diegochagas/saint-seiya-api/master/frontend/src/" + Characters.get(position).getImage();
+        //pegando as referências das Views
+        TextView name = (TextView) view.findViewById(R.id.textView2);
+        //TextView id = (TextView) view.findViewById(R.id.textView);
+        ImageView imagem = (ImageView) view.findViewById(R.id.imageView2);
 
-        viewHolder.tvw1.setText(names[position]);
-        viewHolder.tvw2.setText(ids[position]);
-        //viewHolder.tvw2.setText(Characters.get(position).getCloth().get(0).getCloth());
-        //Picasso.get().load(URL).into(viewHolder.ivw);
-        return r;
-
-    }
-    class ViewHolder
-    {
-        TextView tvw1;
-        TextView tvw2;
-        ImageView ivw;
-        ViewHolder(View v)
-        {
-            tvw1 = v.findViewById(R.id.textView);
-            tvw2 = v.findViewById(R.id.textView2);
-            ivw =  v.findViewById(R.id.imageView2);
+        //populando as Views
+        try {
+            name.setText(" ID: " + String.valueOf(character.getId()) + "\nName: " + character.getName().toString() + "\nCloth: " + character.getCloth().get(0).getCloth());
+        } catch (IndexOutOfBoundsException e){
+            name.setText(" ID: " + String.valueOf(character.getId()) + "\nName: " + character.getName().toString() + "\nCloth: " + "NONE");
         }
+        //id.setText("\n");
+        URL = URL + character.getImage().toString();
+        //Log.i("URL: ", URL);
+        Picasso.get().load(URL).into(imagem);
+        //imagem.setImageResource(R.drawable.java);
+
+        return view;
     }
 }
 

@@ -6,25 +6,25 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"><![CDATA[
+
+        app:srcCompat="@mipmap/ic_launcher" />
+
+
+
+        ]]>
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/ic_launcher" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="309dp"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="17dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginEnd="13dp"
-            android:layout_toEndOf="@+id/imageView2"
-            android:text="TextView" />
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="fitXY"
+            />
+
 
         <TextView
             android:id="@+id/textView2"
@@ -36,6 +36,9 @@
             android:layout_marginTop="17dp"
             android:layout_marginEnd="5dp"
             android:layout_toEndOf="@+id/imageView2"
-            android:text="TextView" />
+            android:text="TextView"
+            android:fontFamily="casual"
+            android:textColor="@color/CDZ"
+            />
     </RelativeLayout>
 </LinearLayout>

@@ -1,5 +1,7 @@
 package com.example.atividade_04;
 
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 
 public class Character {
@@ -85,4 +87,11 @@ public class Character {
         return cloth;
     }
 
+    @Override
+    public String toString() {
+        return "Character{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

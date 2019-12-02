@@ -3,16 +3,15 @@ package com.example.atividade_04;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import java.util.Arrays;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -41,6 +40,7 @@ public class ViewList extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -51,6 +51,7 @@ public class ViewList extends AppCompatActivity {
         OkHttpClient client = new OkHttpClient();
         String url = "https://saint-seiya-api.herokuapp.com/api/characters/";
         Request request = new Request.Builder().url(url).build();
+        characterArrayList = new ArrayList<>();
 
         client.newCall(request).enqueue(new Callback() {
                                             @Override
@@ -75,9 +76,6 @@ public class ViewList extends AppCompatActivity {
                                                                     obj1 = jsonArray.getJSONObject(i);
                                                                     Characters.add(obj1);
                                                                 }
-
-                                                                characterArrayList = new ArrayList<>();
-
 
 
                                                                 for (JSONObject character : Characters) {
@@ -134,6 +132,9 @@ public class ViewList extends AppCompatActivity {
 
                                                                     Character character1 = new Character(id, name, age, gender, nationality, training, height, blood, master, apprentice, attack, image, clothArrayList, birth, weight);
                                                                     characterArrayList.add(character1);
+                                                                    //Log.i("Name: ", name);
+
+
 //                                                                        if(character1.getCloth().size() > 0)
 //                                                                            Log.i("Cloth: ",character1.getCloth().get(0).getCloth());
 //                                                                    Log.i("Name: ", name);
@@ -143,6 +144,7 @@ public class ViewList extends AppCompatActivity {
 
                                                                 }
 
+                                                                populateListView(characterArrayList);
                                                             } catch (JSONException e) {
                                                                 Log.e("CDZApp", "unexpected JSON Exception", e);
                                                             }
@@ -154,25 +156,14 @@ public class ViewList extends AppCompatActivity {
 
         );
 
-        //Log.i("Nome: ", characterArrayList.get(1).getName());
-        ArrayList<String> namesList = new ArrayList<>();
-        ArrayList<Integer> idsList = new ArrayList<>();
-        ArrayList<String> imageURLList = new ArrayList<>();
-
-        for (Character character : characterArrayList){
-            namesList.add(character.getName());
-            idsList.add(character.getId());
-            imageURLList.add(character.getImage());
-        }
-
-        Object[] names = namesList.toArray();
-        Log.i("SAKOPSKAPOSKAOPSKAOP",Arrays.toString(names));
-
-//        lst = findViewById(R.id.liborio);
-//        CavaleirosListView cavaleirosListView = new CavaleirosListView(this, names,ids,imageUrl);
-//        lst.setAdapter(cavaleirosListView);
     }
+    public void populateListView(ArrayList <Character> characterArrayList){
 
-
+        lst = findViewById(R.id.listView);
+        //CavaleirosListView cavaleirosListView = new CavaleirosListView(this, characterArrayList);
+        //ArrayAdapter<Character> adapter = new ArrayAdapter (this, android.R.layout.simple_list_item_1, characterArrayList);
+        BaseAdapter adapter = new CavaleirosListView(characterArrayList,this);
+        lst.setAdapter(adapter);
+    }
  }
 
