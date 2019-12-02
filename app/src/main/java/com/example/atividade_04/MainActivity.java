@@ -144,10 +144,10 @@ public class MainActivity extends AppCompatActivity {
                                                                     characterArrayList.add(character1);
 
 
-                                                                    Log.i("Name: ", name);
-                                                                    Log.i("age: ", age);
-                                                                    Log.i("gender: ", gender);
-                                                                    Log.i("nationality: ", nationality);
+//                                                                    Log.i("Name: ", name);
+//                                                                    Log.i("age: ", age);
+//                                                                    Log.i("gender: ", gender);
+//                                                                    Log.i("nationality: ", nationality);
 
                                                                 }
                                                                 Character char1 = characterArrayList.get(10);

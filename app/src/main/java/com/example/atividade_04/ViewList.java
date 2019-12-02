@@ -2,25 +2,177 @@ package com.example.atividade_04;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.util.Arrays;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class ViewList extends AppCompatActivity {
 
     ListView lst;
-    String[] saints = {"Manga", "Banana", "Watermalon", "Kiwi", "Apple"};
-    String[] desc = {"This is Mango", "This is Brazil", "This is Praia", "This is Passaro", "This is apple"};
-    String[] image = {"This is Mango", "This is Brazil", "This is Praia", "This is Passaro", "This is apple"};
+
+    private TextView textName;
+    private TextView textAge;
+    private TextView textBirth;
+    private TextView textGender;
+    private TextView textNationality;
+    private ImageView imageView;
+
+    private ArrayList<JSONObject> Characters;
+    private ArrayList<JSONObject> Cloths;
+
+    private ArrayList<Character> characterArrayList;
+    private ArrayList<Cloth> clothArrayList;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
 
 
-        lst = (ListView) findViewById(R.id.liborio);
-        CavaleirosListView cavaleirosListView = new CavaleirosListView(this,saints,desc,image);
-        lst.setAdapter(cavaleirosListView);
+        OkHttpClient client = new OkHttpClient();
+        String url = "https://saint-seiya-api.herokuapp.com/api/characters/";
+        Request request = new Request.Builder().url(url).build();
 
+        client.newCall(request).enqueue(new Callback() {
+                                            @Override
+                                            public void onFailure(Call call, IOException e) {
+                                                e.printStackTrace();
+                                            }
+
+                                            @Override
+                                            public void onResponse(Call call, Response response) throws IOException {
+                                                if (response.isSuccessful()) {
+                                                    final String myResponse = response.body().string();
+
+                                                    ViewList.this.runOnUiThread(new Runnable() {
+                                                        @Override
+                                                        public void run() {
+                                                            try {
+                                                                //JSONObject mainObject = new JSONObject(myResponse);
+                                                                Characters = new ArrayList<JSONObject>();
+                                                                JSONArray jsonArray = new JSONArray(myResponse);
+                                                                JSONObject obj1 = new JSONObject();
+                                                                for (int i = 0; i < jsonArray.length(); i++) {
+                                                                    obj1 = jsonArray.getJSONObject(i);
+                                                                    Characters.add(obj1);
+                                                                }
+
+                                                                characterArrayList = new ArrayList<>();
+
+
+
+                                                                for (JSONObject character : Characters) {
+                                                                    int id = character.getInt("id");
+                                                                    String name = character.getString("name");
+                                                                    String age = character.getString("age");
+                                                                    String gender = character.getString("gender");
+                                                                    String birth = character.getString("birth");
+                                                                    String weight = character.getString("weight");
+                                                                    String nationality = character.getString("nationality");
+                                                                    String training = character.getString("training");
+                                                                    String height = character.getString("height");
+                                                                    String blood = character.getString("blood");
+                                                                    JSONArray masterArray = character.getJSONArray("master");
+                                                                    String[] master = new String[masterArray.length()];
+                                                                    for (int i = 0; i < masterArray.length(); i++) {
+                                                                        master[i] = masterArray.getJSONObject(i).getString("name");
+                                                                    }
+                                                                    JSONArray apprenticeArray = character.getJSONArray("apprentice");
+                                                                    String[] apprentice = new String[apprenticeArray.length()];
+                                                                    for (int i = 0; i < apprenticeArray.length(); i++) {
+                                                                        apprentice[i] = apprenticeArray.getJSONObject(i).getString("name");
+                                                                    }
+                                                                    JSONArray attackArray = character.getJSONArray("attacks");
+                                                                    String[] attack = new String[attackArray.length()];
+                                                                    if (attackArray.length() != 0) {
+                                                                        for (int i = 0; i < attackArray.length(); i++) {
+                                                                            attack[i] = attackArray.getString(i);
+                                                                        }
+                                                                    }
+                                                                    String image = character.getString("image");
+
+                                                                    JSONArray clothArray = character.getJSONArray("cloths");
+                                                                    JSONObject objCloth = new JSONObject();
+                                                                    Cloths = new ArrayList<>();
+                                                                    for (int i = 0; i < clothArray.length(); i++) {
+                                                                        objCloth = clothArray.getJSONObject(i);
+                                                                        Cloths.add(objCloth);
+                                                                    }
+
+                                                                    clothArrayList = new ArrayList<>();
+
+                                                                    for (JSONObject c : Cloths) {
+                                                                        int idCloth = c.getInt("id");
+                                                                        String clothCloth = c.getString("cloth");
+                                                                        String classCloth = c.getString("class");
+                                                                        String affiliationCloth = c.getString("affiliation");
+                                                                        String rankCloth = c.getString("rank");
+                                                                        String imageCloth = c.getString("image");
+                                                                        String symbolCloth = c.getString("symbol");
+                                                                        Cloth cloth = new Cloth(idCloth, classCloth, rankCloth, affiliationCloth, imageCloth, clothCloth, symbolCloth);
+                                                                        clothArrayList.add(cloth);
+                                                                    }
+
+                                                                    Character character1 = new Character(id, name, age, gender, nationality, training, height, blood, master, apprentice, attack, image, clothArrayList, birth, weight);
+                                                                    characterArrayList.add(character1);
+//                                                                        if(character1.getCloth().size() > 0)
+//                                                                            Log.i("Cloth: ",character1.getCloth().get(0).getCloth());
+//                                                                    Log.i("Name: ", name);
+//                                                                    Log.i("age: ", age);
+//                                                                    Log.i("gender: ", gender);
+//                                                                    Log.i("nationality: ", nationality);
+
+                                                                }
+
+                                                            } catch (JSONException e) {
+                                                                Log.e("CDZApp", "unexpected JSON Exception", e);
+                                                            }
+                                                        }
+                                                    });
+                                                }
+                                            }
+                                        }
+
+        );
+
+        //Log.i("Nome: ", characterArrayList.get(1).getName());
+        ArrayList<String> namesList = new ArrayList<>();
+        ArrayList<Integer> idsList = new ArrayList<>();
+        ArrayList<String> imageURLList = new ArrayList<>();
+
+        for (Character character : characterArrayList){
+            namesList.add(character.getName());
+            idsList.add(character.getId());
+            imageURLList.add(character.getImage());
+        }
+
+        Object[] names = namesList.toArray();
+        Log.i("SAKOPSKAPOSKAOPSKAOP",Arrays.toString(names));
+
+//        lst = findViewById(R.id.liborio);
+//        CavaleirosListView cavaleirosListView = new CavaleirosListView(this, names,ids,imageUrl);
+//        lst.setAdapter(cavaleirosListView);
     }
-}
+
+
+ }
+

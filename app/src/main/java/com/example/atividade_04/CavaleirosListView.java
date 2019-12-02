@@ -2,6 +2,7 @@ package com.example.atividade_04;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,22 +13,23 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class CavaleirosListView extends ArrayAdapter<String> {
+import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 
-    private String[] saints;
-    private String[] desc;
-    private String[] image;
+public class CavaleirosListView extends ArrayAdapter<Character> {
+
+    private String[] names;
+    private Integer[] ids;
+    private String[] imageUrl;
     private Activity context;
 
-    public CavaleirosListView(Activity context, String[] fruitname, String[] desc, String[] image) {
-        super(context, R.layout.listview_layout,fruitname);
-
-        this.context=context;
-        this.saints = fruitname;
-        this.desc = desc;
-        this.image = image;
-
+    public CavaleirosListView(Activity context, String[] names, Integer[] ids, String[] imageUrl) {
+        super(context, R.layout.listview_layout);
+        this.context = context;
+        this.names = names;
+        this.ids = ids;
+        this.imageUrl = imageUrl;
     }
 
     @NonNull
@@ -45,12 +47,13 @@ public class CavaleirosListView extends ArrayAdapter<String> {
             viewHolder= (ViewHolder) r.getTag();
 
         }
-//        viewHolder.ivw.setImageResource();
-        viewHolder.tvw1.setText(saints[position]);
-        viewHolder.tvw2.setText(desc[position]);
+        //String URL = "https://raw.githubusercontent.com/diegochagas/saint-seiya-api/master/frontend/src/" + Characters.get(position).getImage();
 
+        viewHolder.tvw1.setText(names[position]);
+        viewHolder.tvw2.setText(ids[position]);
+        //viewHolder.tvw2.setText(Characters.get(position).getCloth().get(0).getCloth());
+        //Picasso.get().load(URL).into(viewHolder.ivw);
         return r;
-
 
     }
     class ViewHolder
