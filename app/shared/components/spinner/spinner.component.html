@@ -1,0 +1,7 @@
+<div class="spinner">
+  <ng-container [ngSwitch]="spinner">
+    <app-zodiac-wheel *ngSwitchCase="'zodiac-wheel'" [color]="color"></app-zodiac-wheel>
+
+    <mat-spinner *ngSwitchDefault></mat-spinner>
+  </ng-container>
+</div>

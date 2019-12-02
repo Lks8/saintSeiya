@@ -17,11 +17,11 @@ public class Character {
     private String[] apprentice;
     private String[] attacks;
     private String image;
-    private Cloth cloth;
+    private ArrayList<Cloth> cloth;
 
     public Character(int id,String name, String age, String gender, String nationality, String training,
                      String height, String blood, String[] master, String[] apprentice, String[] attacks,
-                     String image, Cloth cloth, String birth, String weight
+                     String image, ArrayList<Cloth> cloth, String birth, String weight
                      ){
         this.id = id; this.name = name; this.age = age; this.gender = gender; this.nationality = nationality;
         this.training = training; this.height = height; this.blood = blood; this.master = master;
@@ -81,7 +81,7 @@ public class Character {
         return image;
     }
 
-    public Cloth getCloth() {
+    public ArrayList<Cloth> getCloth() {
         return cloth;
     }
 

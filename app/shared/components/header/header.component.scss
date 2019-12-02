@@ -1,0 +1,76 @@
+@import '../../../../themes/white-label';
+
+.header {
+  position: relative;
+  z-index: 4;
+
+  .navbar {
+    justify-content: flex-end;
+
+    .navbar-brand {
+      position: absolute;
+      top: 0px;
+      left: 15px;
+      display: flex;
+      align-items: center;
+      height: 53px;
+
+      &:hover, &:focus {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      .icon-athena-staff {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 50px;
+        padding-right: 10px;
+        position: relative;
+        top: 8px;
+      }
+
+      .brand-name {
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.5);
+
+  .material-icons {
+    transition: transform 0.5s;
+  }
+
+  &[aria-expanded="true"] {
+    .material-icons {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:hover, &:focus {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.75);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .navbar-brand {
+    top: 6px !important;
+  }
+
+  .navbar-collapse {
+    padding-left: 200px;
+
+    .material-icons {
+      transform: rotate(90deg);
+    }
+
+    [aria-expanded="true"] {
+      .material-icons {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}
