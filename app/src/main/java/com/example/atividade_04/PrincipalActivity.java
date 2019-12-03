@@ -1,10 +1,14 @@
 package com.example.atividade_04;
 
+import android.content.Intent;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.content.Intent;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,5 +26,12 @@ public class PrincipalActivity extends AppCompatActivity {
         ImageView imagemCDZ = (ImageView) findViewById(R.id.imageCDZ);
 
         Picasso.get().load(URL).into(imagemCDZ);
+        MediaPlayer ring = MediaPlayer.create(PrincipalActivity.this,R.raw.raw);
+        ring.start();
+    }
+    public void changeView(View view){
+        Intent intent = new Intent(this,preListView.class);
+        startActivity(intent);
+
     }
 }

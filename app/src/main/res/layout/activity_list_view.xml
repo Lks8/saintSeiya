@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewList">
+    tools:context=".ViewList"
+    >
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="409dp"
         android:layout_height="729dp"
-        android:background="@color/backgroundCDZ"
+        android:background="@drawable/background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
