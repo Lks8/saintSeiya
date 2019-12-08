@@ -11,18 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="584c5a2b-b24d-4bcb-9201-7d86d6d4b2b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_list_view_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/CavaleirosListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/CavaleirosListView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/ViewList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/ViewList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/preListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/preListView.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +38,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/PrincipalActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
+            <state relative-caret-position="476">
               <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -59,17 +51,17 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider editor-type-id="android-manifest" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="-199">
               <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/ViewList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2414">
-              <caret line="142" selection-start-line="142" selection-end-line="142" />
+            <state relative-caret-position="-1599">
+              <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2318#10597#0" expanded="true" />
@@ -89,7 +81,7 @@
           <provider editor-type-id="android-designer2" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_list_view_layout.xml">
           <provider editor-type-id="text-editor">
             <state relative-caret-position="153">
@@ -102,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/CavaleirosListView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+            <state relative-caret-position="408">
+              <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -122,24 +114,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/MainActivity.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/preListView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="134" column="88" selection-start-line="134" selection-start-column="88" selection-end-line="134" selection-end-column="88" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2775#11636#0" expanded="true" />
-                <element signature="e#11635#11636#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-123">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/preListView.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="291">
+              <caret line="134" column="88" selection-start-line="134" selection-start-column="88" selection-end-line="134" selection-end-column="88" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -192,11 +182,11 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_principal.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/PrincipalActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/preListView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/ViewList.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/CavaleirosListView.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_list_view_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/ViewList.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/preListView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/CavaleirosListView.java" />
       </list>
     </option>
   </component>
@@ -442,7 +432,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575766013219</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="TO DANDO COMMIT CARALHO22222222222222222222222222222">
+      <created>1575767212460</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575767212460</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -459,7 +456,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.1302589" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1302589" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -474,7 +471,7 @@
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50033534" side_tool="true" weight="0.34039548" />
       <window_info anchor="bottom" id="Terminal" order="5" weight="0.3299712" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.124333926" />
-      <window_info active="true" anchor="bottom" id="Build" order="7" visible="true" weight="0.37833038" />
+      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.37833038" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.32909605" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
@@ -499,7 +496,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="TO DANDO COMMIT CARALHO" />
-    <option name="LAST_COMMIT_MESSAGE" value="TO DANDO COMMIT CARALHO" />
+    <MESSAGE value="TO DANDO COMMIT CARALHO22222222222222222222222222222" />
+    <option name="LAST_COMMIT_MESSAGE" value="TO DANDO COMMIT CARALHO22222222222222222222222222222" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-29/android/os/StrictMode.java">
@@ -620,51 +618,36 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/icon.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="96" column="52" selection-start-line="9" selection-start-column="3" selection-end-line="96" selection-end-column="52" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_list_view_layout.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="-199">
           <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/PrincipalActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/CavaleirosListView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+        <state relative-caret-position="408">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/preListView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="134" column="88" selection-start-line="134" selection-start-column="88" selection-end-line="134" selection-end-column="88" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2775#11636#0" expanded="true" />
-            <element signature="e#11635#11636#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/ViewList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2414">
-          <caret line="142" selection-start-line="142" selection-end-line="142" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2318#10597#0" expanded="true" />
-            <element signature="e#10596#10597#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -677,31 +660,44 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="96" column="52" selection-start-line="9" selection-start-column="3" selection-end-line="96" selection-end-column="52" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/CavaleirosListView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+        <state relative-caret-position="291">
+          <caret line="134" column="88" selection-start-line="134" selection-start-column="88" selection-end-line="134" selection-end-column="88" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_list_view_layout.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/preListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-123">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/PrincipalActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/atividade_04/ViewList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1599">
+          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2318#10597#0" expanded="true" />
+            <element signature="e#10596#10597#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

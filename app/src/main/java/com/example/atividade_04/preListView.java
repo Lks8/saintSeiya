@@ -14,6 +14,7 @@ import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class preListView extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,11 +23,9 @@ public class preListView extends AppCompatActivity {
         String URL = "https://images.alphacoders.com/675/thumb-1920-675142.png";
         ImageView imagemCDZ = (ImageView) findViewById(R.id.someImage);
         Picasso.get().load(URL).into(imagemCDZ);
-
     }
 
     public void filterSaints(View view){
-
         Intent intent = new Intent(this, ViewList.class);
         EditText editText = (EditText) findViewById(R.id.editText);
         String message = editText.getText().toString();

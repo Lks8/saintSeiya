@@ -23,7 +23,6 @@ public class CavaleirosListView extends BaseAdapter {
 
 private final ArrayList<Character> characters;
 private final Activity context;
-//private String URL = "https://raw.githubusercontent.com/diegochagas/saint-seiya-api/master/frontend/src/";
 
 public CavaleirosListView(ArrayList<Character> characters, Activity context){
     this.context = context;
@@ -34,23 +33,21 @@ public CavaleirosListView(ArrayList<Character> characters, Activity context){
     @Override public Object getItem(int position) { return characters. get(position); }
 
     @Override public long getItemId(int position) { return 0; }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         String URL = "https://raw.githubusercontent.com/diegochagas/saint-seiya-api/master/frontend/src/";
         View view = context.getLayoutInflater().inflate(R.layout.activity_list_view_layout,parent,false);
         Character character = characters.get(position);
 
-        //pegando as referências das Views
         TextView name = (TextView) view.findViewById(R.id.text_name);
         TextView gender = (TextView) view.findViewById(R.id.text_gender);
         TextView age = (TextView) view.findViewById(R.id.text_age);
         TextView nationality = (TextView) view.findViewById(R.id.text_nationality);
         TextView birth = (TextView) view.findViewById(R.id.text_birth);
 
-        //TextView id = (TextView) view.findViewById(R.id.textView);
         ImageView imagem = (ImageView) view.findViewById(R.id.image_view);
 
-        //populando as Views
         name.setText(" Name: " + character.getName().toString());
         gender.setText(" gender: "+ character.getGender().toString());
         name.setText(" Name: "+ character.getName().toString());
@@ -63,11 +60,8 @@ public CavaleirosListView(ArrayList<Character> characters, Activity context){
         } catch (IndexOutOfBoundsException e){
             nationality.setText("Cloth: NONE");
         }
-        //id.setText("\n");
         URL = URL + character.getImage().toString();
-        //Log.i("URL: ", URL);
         Picasso.get().load(URL).into(imagem);
-        //imagem.setImageResource(R.drawable.java);]
         return view;
     }
 }

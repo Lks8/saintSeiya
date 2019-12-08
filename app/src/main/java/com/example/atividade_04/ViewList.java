@@ -40,35 +40,25 @@ public class ViewList extends AppCompatActivity {
     private ArrayList<Character> characterArrayList;
     private ArrayList<Cloth> clothArrayList;
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
-
-
         OkHttpClient client = new OkHttpClient();
         String url = "https://saint-seiya-api.herokuapp.com/api/characters/";
         Request request = new Request.Builder().url(url).build();
         characterArrayList = new ArrayList<>();
         Intent intent = getIntent();
         final String message = intent.getStringExtra(preListView.EXTRA_MESSAGE);
-
         client.newCall(request).enqueue(new Callback() {
                                             @Override
                                             public void onFailure(Call call, IOException e) {
                                                 e.printStackTrace();
                                             }
-
                                             @Override
                                             public void onResponse(Call call, Response response) throws IOException {
                                                 if (response.isSuccessful()) {
                                                     final String myResponse = response.body().string();
-
                                                     ViewList.this.runOnUiThread(new Runnable() {
                                                         @Override
                                                         public void run() {
@@ -81,8 +71,6 @@ public class ViewList extends AppCompatActivity {
                                                                     obj1 = jsonArray.getJSONObject(i);
                                                                     Characters.add(obj1);
                                                                 }
-
-
                                                                 for (JSONObject character : Characters) {
                                                                     int id = character.getInt("id");
                                                                     String name = character.getString("name");
@@ -112,7 +100,6 @@ public class ViewList extends AppCompatActivity {
                                                                         }
                                                                     }
                                                                     String image = character.getString("image");
-
                                                                     JSONArray clothArray = character.getJSONArray("cloths");
                                                                     JSONObject objCloth = new JSONObject();
                                                                     Cloths = new ArrayList<>();
@@ -120,9 +107,7 @@ public class ViewList extends AppCompatActivity {
                                                                         objCloth = clothArray.getJSONObject(i);
                                                                         Cloths.add(objCloth);
                                                                     }
-
                                                                     clothArrayList = new ArrayList<>();
-
                                                                     for (JSONObject c : Cloths) {
                                                                         String rankCloth = c.getString("rank");
                                                                         if(message.equals(rankCloth)){
@@ -139,18 +124,8 @@ public class ViewList extends AppCompatActivity {
                                                                     if(clothArrayList.size()!=0) {
                                                                         Character character1 = new Character(id, name, age, gender, nationality, training, height, blood, master, apprentice, attack, image, clothArrayList, birth, weight);
                                                                         characterArrayList.add(character1);
-                                                                    }//Log.i("Name: ", name);
-
-
-//                                                                        if(character1.getCloth().size() > 0)
-//                                                                            Log.i("Cloth: ",character1.getCloth().get(0).getCloth());
-//                                                                    Log.i("Name: ", name);
-//                                                                    Log.i("age: ", age);
-//                                                                    Log.i("gender: ", gender);
-//                                                                    Log.i("nationality: ", nationality);
-
+                                                                    }
                                                                 }
-
                                                                 populateListView(characterArrayList);
                                                             } catch (JSONException e) {
                                                                 Log.e("CDZApp", "unexpected JSON Exception", e);
@@ -160,15 +135,10 @@ public class ViewList extends AppCompatActivity {
                                                 }
                                             }
                                         }
-
         );
-
     }
     public void populateListView(ArrayList <Character> characterArrayList){
-
         lst = findViewById(R.id.listView);
-        //CavaleirosListView cavaleirosListView = new CavaleirosListView(this, characterArrayList);
-        //ArrayAdapter<Character> adapter = new ArrayAdapter (this, android.R.layout.simple_list_item_1, characterArrayList);
         BaseAdapter adapter = new CavaleirosListView(characterArrayList,this);
         lst.setAdapter(adapter);
     }
