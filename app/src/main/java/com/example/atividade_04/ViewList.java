@@ -1,6 +1,8 @@
 package com.example.atividade_04;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.BaseAdapter;
@@ -41,6 +43,7 @@ public class ViewList extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -52,6 +55,8 @@ public class ViewList extends AppCompatActivity {
         String url = "https://saint-seiya-api.herokuapp.com/api/characters/";
         Request request = new Request.Builder().url(url).build();
         characterArrayList = new ArrayList<>();
+        Intent intent = getIntent();
+        final String message = intent.getStringExtra(preListView.EXTRA_MESSAGE);
 
         client.newCall(request).enqueue(new Callback() {
                                             @Override
@@ -119,20 +124,22 @@ public class ViewList extends AppCompatActivity {
                                                                     clothArrayList = new ArrayList<>();
 
                                                                     for (JSONObject c : Cloths) {
-                                                                        int idCloth = c.getInt("id");
-                                                                        String clothCloth = c.getString("cloth");
-                                                                        String classCloth = c.getString("class");
-                                                                        String affiliationCloth = c.getString("affiliation");
                                                                         String rankCloth = c.getString("rank");
-                                                                        String imageCloth = c.getString("image");
-                                                                        String symbolCloth = c.getString("symbol");
-                                                                        Cloth cloth = new Cloth(idCloth, classCloth, rankCloth, affiliationCloth, imageCloth, clothCloth, symbolCloth);
-                                                                        clothArrayList.add(cloth);
+                                                                        if(message.equals(rankCloth)){
+                                                                            int idCloth = c.getInt("id");
+                                                                            String clothCloth = c.getString("cloth");
+                                                                            String classCloth = c.getString("class");
+                                                                            String affiliationCloth = c.getString("affiliation");
+                                                                            String imageCloth = c.getString("image");
+                                                                            String symbolCloth = c.getString("symbol");
+                                                                            Cloth cloth = new Cloth(idCloth, classCloth, rankCloth, affiliationCloth, imageCloth, clothCloth, symbolCloth);
+                                                                            clothArrayList.add(cloth);
+                                                                        }
                                                                     }
-
-                                                                    Character character1 = new Character(id, name, age, gender, nationality, training, height, blood, master, apprentice, attack, image, clothArrayList, birth, weight);
-                                                                    characterArrayList.add(character1);
-                                                                    //Log.i("Name: ", name);
+                                                                    if(clothArrayList.size()!=0) {
+                                                                        Character character1 = new Character(id, name, age, gender, nationality, training, height, blood, master, apprentice, attack, image, clothArrayList, birth, weight);
+                                                                        characterArrayList.add(character1);
+                                                                    }//Log.i("Name: ", name);
 
 
 //                                                                        if(character1.getCloth().size() > 0)

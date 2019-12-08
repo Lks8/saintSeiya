@@ -33,6 +33,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String EXTRA_MESSAGE = "com.example.atividade_04.MESSAGE";
     private TextView textName;
     private TextView textAge;
     private TextView textBirth;
@@ -129,17 +130,18 @@ public class MainActivity extends AppCompatActivity {
                                                                     clothArrayList = new ArrayList<>();
 
                                                                     for (JSONObject c : Cloths) {
-                                                                        int idCloth = c.getInt("id");
-                                                                        String clothCloth = c.getString("cloth");
-                                                                        String classCloth = c.getString("class");
-                                                                        String affiliationCloth = c.getString("affiliation");
                                                                         String rankCloth = c.getString("rank");
-                                                                        String imageCloth = c.getString("image");
-                                                                        String symbolCloth = c.getString("symbol");
-                                                                        Cloth cloth = new Cloth(idCloth, classCloth, rankCloth, affiliationCloth, imageCloth, clothCloth, symbolCloth);
-                                                                        clothArrayList.add(cloth);
-                                                                    }
 
+                                                                            int idCloth = c.getInt("id");
+                                                                            String clothCloth = c.getString("cloth");
+                                                                            String classCloth = c.getString("class");
+                                                                            String affiliationCloth = c.getString("affiliation");
+                                                                            String imageCloth = c.getString("image");
+                                                                            String symbolCloth = c.getString("symbol");
+                                                                            Cloth cloth = new Cloth(idCloth, classCloth, rankCloth, affiliationCloth, imageCloth, clothCloth, symbolCloth);
+                                                                            clothArrayList.add(cloth);
+
+                                                                    }
                                                                     Character character1 = new Character(id, name, age, gender, nationality, training, height, blood, master, apprentice, attack, image, clothArrayList, birth, weight);
                                                                     characterArrayList.add(character1);
 
